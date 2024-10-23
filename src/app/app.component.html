@@ -46,7 +46,7 @@
 
   h1 {
     font-size: 3.125rem;
-    color: var(--gray-900);
+
     font-weight: 500;
     line-height: 100%;
     letter-spacing: -0.125rem;
@@ -175,6 +175,71 @@
       margin-block: 1.5rem;
     }
   }
+
+  
+    form {
+      margin: 0 auto;
+      background-color: #f9f9f9;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      text-align: center;
+      color: #333;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .form-group input, .form-group select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 4px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      background-color: #fff;
+      transition: border-color 0.3s;
+    }
+
+    .form-group input:focus, .form-group select:focus {
+      border-color: #6200ea;
+      outline: none;
+    }
+
+    .submit-btn {
+      width: 100%;
+      padding: 12px;
+      background-color: #6200ea;
+      border: none;
+      color: #fff;
+      font-size: 16px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .submit-btn:hover {
+      background-color: #3700b3;
+    }
+
+    #formResponse {
+      margin-top: 20px;
+      text-align: center;
+      font-size: 16px;
+      color: #28a745;
+    }
+  
+
 </style>
 
 <main class="main">
@@ -225,103 +290,253 @@
           <clipPath id="a"><path fill="#fff" d="M0 0h982v239H0z" /></clipPath>
         </defs>
       </svg>
-      <h1>Hello, {{ title }}</h1>
-      <p>Congratulations! Your app is running. 🎉</p>
+      <h1>Testing Clarity on Angular App</h1>
+      <br>
+      
+      <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angular App</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    .container {
+      /* max-width: 1200px; */
+      margin: 0 auto;
+      padding: 20px;
+    }
+
+    .header {
+      text-align: center;
+      background-color: #6200ea;
+      color: white;
+      padding: 20px;
+    }
+
+    .header h1 {
+      margin: 0;
+    }
+
+    .main-content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding: 20px 0;
+    }
+
+    .content-section {
+      background-color: white;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      margin: 20px;
+      padding: 20px;
+      
+    }
+
+    .content-section h2 {
+      margin-top: 0;
+    }
+
+    .footer {
+      text-align: center;
+      background-color: #6200ea;
+      color: white;
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      bottom: 0;
+    }
+  </style>
+</head>
+<body>
+  <div class="">
+
+    <main class="main-content">
+      <section class="content-section">
+        <h2>Section 1: User Information Form</h2>
+        <p>This is a sample form for user input to check how its reflected on Clarity side. Try entrting input and file upload as well. </p><br>
+        <form id="" onsubmit="submitForm(event)">
+          <div class="form-group">
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+          </div>
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+          </div>
+          <div class="form-group">
+            <label for="fill">Upload File</label>
+            <input type="file" id="phone" name="file" placeholder="Enter your phone number">
+          </div>
+          <div class="form-group">
+            <label for="dob">Date of Birth</label>
+            <input type="date" id="dob" name="dob">
+          </div>
+          <div class="form-group">
+            <label for="gender">Gender</label>
+            <select id="gender" name="gender">
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+              <option value="other">Other</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <button type="submit" class="submit-btn">Submit</button>
+          </div>
+        </form>
+        <p id="formResponse"></p>
+      
+        <script>
+          function submitForm(event) {
+            event.preventDefault(); // Prevent form from refreshing the page
+            const firstName = document.getElementById('firstName').value;
+            const email = document.getElementById('email').value;
+            const phone = document.getElementById('phone').value;
+            const dob = document.getElementById('dob').value;
+            const gender = document.getElementById('gender').value;
+            
+            // Display a simple form submission response
+            document.getElementById('formResponse').innerText = 
+              `Thank you, ${firstName} We have received your details.`;
+            
+            // Log the data to the console (for debugging purposes)
+            console.log({
+              firstName,
+              email,
+              phone,
+              dob,
+              gender
+            });
+          }
+        </script>
+      
+</section>        
+
+<section class="content-section">
+  <h2>Section 2: Trigger a JavaScript Error</h2>
+  <p>Click the button below to intentionally trigger a JavaScript error. Open the console to check the errors happenning</p>
+  <button class="error-btn" onclick="triggerError()">Click to Trigger Error</button>
+  <p id="errorMessage"></p>
+
+  <script>
+    function triggerError() {
+      try {
+        // Intentionally causing an error by calling a non-existent function
+        nonExistentFunction();
+      } catch (error) {
+        // Display the error message in the UI
+        document.getElementById('errorMessage').innerText = `Error: ${error.message}`;
+        console.error("An error occurred:", error);
+      }
+    }
+  </script>
+
+  <style>
+    .error-btn {
+      padding: 12px 20px;
+      background-color: #d32f2f;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .error-btn:hover {
+      background-color: #b71c1c;
+    }
+
+    #errorMessage {
+      margin-top: 10px;
+      color: #d32f2f;
+      font-weight: bold;
+    }
+  </style>
+</section>
+
+<section class="content-section">
+  <h2>Section 3: Video Embedding</h2>
+  <iframe width="620" height="355" src="https://www.youtube.com/embed/I4n1IcZ3vRs?si=shKyvJJ9VBNiTTdY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+</section>
+
+<section class="content-section">
+  <h2>Section 4: Image Gallery</h2>
+  <div class="image-gallery">
+    <img src="https://fastly.picsum.photos/id/189/600/600.jpg?hmac=vqjZgwRzy3zD5D66F8oXUUC7VRMfrI7HEtY6mlCvcxA" alt="Image 1">
+    <img src="https://fastly.picsum.photos/id/974/600/600.jpg?hmac=3uc-RdHqWrmLdAHOHextU7-LaljxKszlzasvUHHumMQ" alt="Image 3">
+    <img src="https://fastly.picsum.photos/id/137/600/600.jpg?hmac=Ir1WziwzD_cFgVsAdiPzlDkdv7qokOBACMdpQ_aLSSQ" alt="Image 3">
+    <img src="https://fastly.picsum.photos/id/618/600/600.jpg?hmac=EgwQ4PrKNa8TpxDymJbZE-iWYp7OzkzmOLAPPwK2OGU" alt="Image 4">
+  </div>
+
+  <style>
+    img {
+      margin-top: 30px;
+    }
+    .image-gallery {
+      
+      justify-content: space-around;
+      gap: 20px;
+    }
+
+    .image-card {
+      flex-basis: 45%;
+      background-color: #fff;
+      padding: 15px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      text-align: center;
+      transition: transform 0.3s;
+    }
+
+    .image-card img {
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    .image-card p {
+      margin-top: 10px;
+      font-size: 14px;
+      color: #555;
+    }
+
+    .image-card:hover {
+      transform: scale(1.05);
+    }
+  </style>
+</section>
+
+
+    </main>
+
+  </div>
+
+  <script>
+    // You can also add your scripts here for more complex behavior if needed
+    console.log("App Loaded");
+  </script>
+</body>
+</html>
+
+      
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
-    <div class="right-side">
-      <div class="pill-group">
-        @for (item of [
-          { title: 'Explore the Docs', link: 'https://angular.dev' },
-          { title: 'Learn with Tutorials', link: 'https://angular.dev/tutorials' },
-          { title: 'CLI Docs', link: 'https://angular.dev/tools/cli' },
-          { title: 'Angular Language Service', link: 'https://angular.dev/tools/language-service' },
-          { title: 'Angular DevTools', link: 'https://angular.dev/tools/devtools' },
-        ]; track item.title) {
-          <a
-            class="pill"
-            [href]="item.link"
-            target="_blank"
-            rel="noopener"
-          >
-            <span>{{ item.title }}</span>
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              height="14"
-              viewBox="0 -960 960 960"
-              width="14"
-              fill="currentColor"
-            >
-              <path
-                d="M200-120q-33 0-56.5-23.5T120-200v-560q0-33 23.5-56.5T200-840h280v80H200v560h560v-280h80v280q0 33-23.5 56.5T760-120H200Zm188-212-56-56 372-372H560v-80h280v280h-80v-144L388-332Z"
-              />
-            </svg>
-          </a>
-        }
-      </div>
-      <div class="social-links">
-        <a
-          href="https://github.com/angular/angular"
-          aria-label="Github"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Github"
-          >
-            <path
-              d="M12.3047 0C5.50634 0 0 5.50942 0 12.3047C0 17.7423 3.52529 22.3535 8.41332 23.9787C9.02856 24.0946 9.25414 23.7142 9.25414 23.3871C9.25414 23.0949 9.24389 22.3207 9.23876 21.2953C5.81601 22.0377 5.09414 19.6444 5.09414 19.6444C4.53427 18.2243 3.72524 17.8449 3.72524 17.8449C2.61064 17.082 3.81137 17.0973 3.81137 17.0973C5.04697 17.1835 5.69604 18.3647 5.69604 18.3647C6.79321 20.2463 8.57636 19.7029 9.27978 19.3881C9.39052 18.5924 9.70736 18.0499 10.0591 17.7423C7.32641 17.4347 4.45429 16.3765 4.45429 11.6618C4.45429 10.3185 4.9311 9.22133 5.72065 8.36C5.58222 8.04931 5.16694 6.79833 5.82831 5.10337C5.82831 5.10337 6.85883 4.77319 9.2121 6.36459C10.1965 6.09082 11.2424 5.95546 12.2883 5.94931C13.3342 5.95546 14.3801 6.09082 15.3644 6.36459C17.7023 4.77319 18.7328 5.10337 18.7328 5.10337C19.3942 6.79833 18.9789 8.04931 18.8559 8.36C19.6403 9.22133 20.1171 10.3185 20.1171 11.6618C20.1171 16.3888 17.2409 17.4296 14.5031 17.7321C14.9338 18.1012 15.3337 18.8559 15.3337 20.0084C15.3337 21.6552 15.3183 22.978 15.3183 23.3779C15.3183 23.7009 15.5336 24.0854 16.1642 23.9623C21.0871 22.3484 24.6094 17.7341 24.6094 12.3047C24.6094 5.50942 19.0999 0 12.3047 0Z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://twitter.com/angular"
-          aria-label="Twitter"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="24"
-            height="24"
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Twitter"
-          >
-            <path
-              d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
-            />
-          </svg>
-        </a>
-        <a
-          href="https://www.youtube.com/channel/UCbn1OgGei-DV7aSRo_HaAiw"
-          aria-label="Youtube"
-          target="_blank"
-          rel="noopener"
-        >
-          <svg
-            width="29"
-            height="20"
-            viewBox="0 0 29 20"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-            alt="Youtube"
-          >
-            <path
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M27.4896 1.52422C27.9301 1.96749 28.2463 2.51866 28.4068 3.12258C29.0004 5.35161 29.0004 10 29.0004 10C29.0004 10 29.0004 14.6484 28.4068 16.8774C28.2463 17.4813 27.9301 18.0325 27.4896 18.4758C27.0492 18.9191 26.5 19.2389 25.8972 19.4032C23.6778 20 14.8068 20 14.8068 20C14.8068 20 5.93586 20 3.71651 19.4032C3.11363 19.2389 2.56449 18.9191 2.12405 18.4758C1.68361 18.0325 1.36732 17.4813 1.20683 16.8774C0.613281 14.6484 0.613281 10 0.613281 10C0.613281 10 0.613281 5.35161 1.20683 3.12258C1.36732 2.51866 1.68361 1.96749 2.12405 1.52422C2.56449 1.08095 3.11363 0.76113 3.71651 0.596774C5.93586 0 14.8068 0 14.8068 0C14.8068 0 23.6778 0 25.8972 0.596774C26.5 0.76113 27.0492 1.08095 27.4896 1.52422ZM19.3229 10L11.9036 5.77905V14.221L19.3229 10Z"
-            />
-          </svg>
-        </a>
-      </div>
-    </div>
   </div>
+
+   
+
+
 </main>
 
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * -->

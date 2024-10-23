@@ -1,0 +1,57 @@
+.main {
+    width: 100%;
+    margin: 0 auto;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+  
+  header {
+    background-color: #f8f9fa;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 2px solid #ddd;
+  }
+  
+  .content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+  }
+  
+  .form-section,
+  .image-gallery,
+  .button-section {
+    width: 30%;
+    padding: 10px;
+  }
+  
+  button {
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    margin-top: 10px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  .scrolling-container {
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  
+  .scrolling-container img {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  footer {
+    margin-top: 50px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    text-align: center;
+  }
+  
